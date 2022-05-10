@@ -1,9 +1,9 @@
-import { HealthModule } from './health/health.module';
 import { Module } from '@nestjs/common';
-import { PostgresProvider } from './pkg/provider/postgres.provider';
+import { CourseModule } from './course/course.module';
+import { HealthModule } from './health/health.module';
 import { ConfigProvider } from './pkg/provider/config.provider';
 import { LoggerProvider } from './pkg/provider/logger.provider';
-import { TodoModule } from './todo/todo.module';
+import { PostgresProvider } from './pkg/provider/postgres.provider';
 
 @Module({
   imports: [
@@ -11,7 +11,7 @@ import { TodoModule } from './todo/todo.module';
     LoggerProvider,
     HealthModule,
     PostgresProvider,
-    TodoModule,
+    CourseModule,
   ],
   controllers: [],
   providers: [],

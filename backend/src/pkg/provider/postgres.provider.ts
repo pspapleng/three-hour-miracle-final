@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { DatabaseConfig } from '../config/database.config';
 import { GenericConfig } from '../config/generic.config';
-import { TodoEntity } from '../dal/todo/todo.entity';
+import { CourseEntity } from '../dal/course/course.entity';
 
 @Module({
   imports: [
@@ -21,7 +21,7 @@ import { TodoEntity } from '../dal/todo/todo.entity';
         password: dbConfig.password,
         database: dbConfig.database,
         autoLoadEntities: true,
-        entities: [TodoEntity],
+        entities: [CourseEntity],
         synchronize: dbConfig.isSync,
         dropSchema:
           genericCofig.mode === 'production' ? false : dbConfig.isDrop,
