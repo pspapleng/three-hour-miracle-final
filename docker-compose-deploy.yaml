@@ -2,24 +2,20 @@ version: '3.8'
 
 services:
     back_end:
-        image: psppx/team-14-backend:${VERSION:-latest}
+        image: psppx/final:${VERSION:-latest}
         ports:
-            - 4141:3000
+            - 4141:8080
         environment:
-            - PORT=3000
-            - MODE=DEV
-            - POSTGRES_HOST=178.128.60.199
-            - POSTGRES_PORT=5432
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=pwmoodment
-            - POSTGRES_DATABASE=dev_moodment
+            - PORT=8080
+            - MODE=production
+            - POSTGRES_HOST=206.189.38.174
+            - POSTGRES_PORT=15432
+            - POSTGRES_USER=pleng
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DATABASE=dEE71D5DCCFA3Aev_moodment
             - POSTGRES_SYNC="false"
             - POSTGRES_DROP_SCHEMA="false"
-            - JWT_SECRET="eyJhbGciOiJIUzI1NieyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY0NDMwNzEyNywiaWF0IjoxNjQ0MzA3MTI3fQ4"
-            - JWT_ACCESS_TOKEN_LIFE="1d"
-            - JWT_REFRESH_TOKEN_LIFE="30d"
-            - BCRYPT_SALT_ROUNDS=8
     front_end:
-        image: psppx/team-14-frontend:${VERSION:-latest}
+        image: psppx/final:${VERSION:-latest}
         ports:
             - 1414:80
